@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 struct NOTE {
@@ -10,24 +11,25 @@ struct NOTE {
 int main()
 {
 	const int n =4;
-setlocale(0,"");
-NOTE* p_mass[n];
-
-    for (int i=0; i<n; i++)
+    setlocale(0,"");
+    NOTE *p_mass = new NOTE[4];
+    
+     for (int i=0; i<n; i++)
     {
-    NOTE *p_mass[i] = new NOTE ;
+      
 	cout<<"Введите информацию"<<i+1<<endl;
 	cout<<"Введите имя"<<endl;
-	cin>>p_mass[i]->Name;
+	getline(cin,p_mass[i].Name);
 		cout<<"Введите фамилию "<<endl;
-	cin>>p_mass[i]->Surname;
+		getline(cin,p_mass[i].Surname);
 		cout<<"Введите номер "<<endl;
-	cin>>p_mass[i]->Num;
+		getline(cin,p_mass[i].Num);
 		cout<<"Введите день рождения"<<endl;
 		for (int j=0;j<3;j++)
 	  cin>>p_mass[i]->Bith[j];
-	  
+       //*p = &p_mass[i];
 }
+
 
 for(int i=3;i>=0;i--)
 	for (int j = 0;j < i;j++) {
@@ -56,6 +58,6 @@ for(int i=3;i>=0;i--)
 	    }
 	}
 	if (j!=1) cout<<"Нет такого человека в системе"<<endl; 
-	delete p_mass;
+	delete []p_mass;
 return 0;	
 }
