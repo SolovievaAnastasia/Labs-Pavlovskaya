@@ -17,10 +17,9 @@ void read(NOTEBOOK zap[], int num)
 {
     int i;
     ifstream myfile("note.txt");
-if(!myfile){
+if(!myfile)
         cout<<"Невозможно открыть файл"<<endl;
-	return 1;
-    }
+    
 for (i=0; i < num; i++)
 	{		 
 	myfile.getline(zap[i].model,20);
@@ -29,7 +28,7 @@ for (i=0; i < num; i++)
 	myfile.getline(zap[i].num[i].z, 5);
 	myfile.getline(zap[i].w,5);
 	myfile.getline(zap[i].price,5);
-}
+	}
     myfile.close();
 }
 
